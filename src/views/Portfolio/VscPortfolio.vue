@@ -23,8 +23,9 @@ provide('openingFile', openingFile)
 <template>
   <div class="vsc-container">
     <vsc-head-panel />
-    <div class="vsc-editor flex justify-start items-start">
-      <vsc-left-bar /> <vsc-folder-structure /> <vsc-code-content />
+    <div class="vsc-editor flex justify-start items-start w-full">
+      <vsc-left-bar /> <vsc-folder-structure />
+      <vsc-code-content style="width: calc(100% - 240px)" />
     </div>
   </div>
 </template>
