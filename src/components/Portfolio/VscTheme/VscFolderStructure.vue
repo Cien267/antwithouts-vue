@@ -1,7 +1,8 @@
 <script setup lang="ts">
 import structureData from '../../../../public/data/vsc-portfolio.json'
-import { computed, ref, type Ref } from 'vue'
+import { computed, ref, type Ref, inject } from 'vue'
 import type { VscThemeDataType } from '@/types/portfolio'
+
 const heightOfBar = computed(() => {
   return window.innerHeight - 26
 })
@@ -28,12 +29,17 @@ const shownStructureList = computed(() => {
   })
 })
 
-const selectedItem = ref(null)
+const selectedFiles = ref(inject('selectedFiles') as VscThemeDataType[])
+const openingFile = ref(inject('openingFile') as VscThemeDataType)
 const handleClick = (data: any) => {
   if (data.is_directory) {
     data.expanded = !data.expanded
   } else {
-    selectedItem.value = data
+    openingFile.value = data
+    const index = selectedFiles.value.findIndex((item: VscThemeDataType) => item.id === data.id)
+    if (index === -1) {
+      selectedFiles.value.push(data)
+    }
   }
 }
 </script>
