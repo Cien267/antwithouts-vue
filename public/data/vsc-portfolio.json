@@ -17,7 +17,7 @@
       "is_directory": false,
       "icon": "<i class=\"fa-regular fa-file-lines text-16\"></i>",
       "parent_id": 1,
-      "content": ""
+      "content": "<div class=\"flex flex-col justify-start items-start text-14 text-[#dddddd] pr-20\">\n  <div>Hi there!</div>\n  <br />\n  <div>\n    My name is Kiên and I am Vietnamese. The word 'ant', translated From English to\n    Vietnamese, is 'kiến'. However if you don't type 's' on your unicode keyboard, my name\n    comes out. That's this website address. :D\n  </div>\n  <br />\n  <div>\n    As a Web Developer specializing in PHP Laravel and Vue.js, I bring a wealth of experience\n    in developing robust and user-friendly web applications. With a solid foundation in\n    backend development using Laravel and frontend expertise in Vue.js, I am adept at creating\n    seamless and responsive digital experiences. My track record includes designing and\n    implementing scalable solutions, integrating complex features, and ensuring optimal\n    performance across platforms. Passionate about staying updated with the latest\n    technologies and best practices, I thrive in dynamic environments where I can leverage my\n    skills to deliver innovative solutions that meet and exceed client expectations.\n  </div>\n</div>"
     },
     {
       "id": 3,
