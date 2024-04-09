@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import structureData from '../../../../public/data/vsc-portfolio.json'
 import type { VscThemeDataType } from '@/types/portfolio'
-import { inject, ref, type Ref, computed } from 'vue'
+import { inject, ref, type Ref, onMounted, onUpdated, onBeforeUnmount } from 'vue'
 
 const selectedFiles = ref(inject('selectedFiles') as VscThemeDataType[])
 const openingFile = ref(inject('openingFile') as VscThemeDataType)
@@ -62,7 +62,6 @@ const getFileAddress = () => {
     let index = structureData.structure.findIndex(
       (item: VscThemeDataType) => item.id === file.parent_id
     )
-    console.log(123)
     if (index !== -1) {
       let parent = structureData.structure[index]
       result.unshift(parent.name)
@@ -77,11 +76,20 @@ const getFileAddress = () => {
 
 // ==================== FILE CONTENT ====================
 const content = ref(null)
-const countContentLines = computed(() => {
-  if (content.value) {
-    return content.value.clientHeight / 20
-  }
-  return 0
+const countContentLines = ref(0)
+
+const updateCountLines = () => {
+  countContentLines.value = Math.round(content.value.clientHeight / 20)
+}
+
+onMounted(() => {
+  window.addEventListener('resize', updateCountLines)
+})
+onUpdated(() => {
+  updateCountLines()
+})
+onBeforeUnmount(() => {
+  window.removeEventListener('resize', updateCountLines)
 })
 // ==================== END FILE CONTENT ====================
 </script>
@@ -117,7 +125,7 @@ const countContentLines = computed(() => {
     <div class="text-[#bab9b9] px-16 py-4 text-14">{{ getFileAddress() }}</div>
     <div class="flex justify-start items-start">
       <div class="flex flex-col justify-start items-center text-[#8e8c8c] text-14 px-20">
-        <span v-for="i in countContentLines">{{ i }}</span>
+        <span v-for="i in countContentLines" :key="i">{{ i }}</span>
       </div>
       <div v-html="openingFile.content" ref="content"></div>
       <!-- <div class="flex flex-col justify-start items-start text-14 text-[#dddddd] pr-20">
@@ -138,6 +146,13 @@ const countContentLines = computed(() => {
           performance across platforms. Passionate about staying updated with the latest
           technologies and best practices, I thrive in dynamic environments where I can leverage my
           skills to deliver innovative solutions that meet and exceed client expectations.
+        </div>
+        <br />
+        <div>Below are my contact information. Feel free to reach out!</div>
+        <div class="flex w-full">
+          <div class="grow">- Phone: 0866015505</div>
+          <div class="grow">- Email: kiennguyenduc267@gmail.com</div>
+          <div class="grow">- Address: Ha Noi, Viet Nam</div>
         </div>
       </div> -->
     </div>
