@@ -48,7 +48,7 @@
     },
     {
       "id": 6,
-      "name": "index.blade.php",
+      "name": "HomeController.php",
       "level": 2,
       "is_directory": false,
       "icon": "<i class=\"fa-brands fa-laravel text-16\" style=\"color:#f72c1f\"></i>",

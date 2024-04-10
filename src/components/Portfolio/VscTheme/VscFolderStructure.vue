@@ -60,12 +60,12 @@ const handleClick = (data: any) => {
       v-for="(data, index) in shownStructureList"
       :key="index"
       :style="`padding-left: ${22 * data.level}px`"
-      class="text-[#dddddd] flex justify-start items-center gap-8 py-3 hover:bg-[#353434] hover:cursor-pointer"
+      class="text-[#dddddd] flex justify-start items-center gap-12 py-3 hover:bg-[#353434] hover:cursor-pointer"
       @click="handleClick(data)"
     >
       <i class="fa-light fa-angle-down" v-if="data.is_directory && data.expanded"></i>
       <i class="fa-light fa-angle-right" v-else-if="data.is_directory && !data.expanded"></i>
-      <span v-html="data.icon"></span>
+      <span v-html="data.icon" class="w-16 h-16 flex items-center justify-center"></span>
       <span class="text-14">{{ data.name }}</span>
     </div>
   </div>

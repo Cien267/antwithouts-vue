@@ -75,11 +75,13 @@ const getFileAddress = () => {
 // ==================== END FILE ADDRESS ====================
 
 // ==================== FILE CONTENT ====================
-const content = ref(null)
+const content = ref<HTMLElement | null>(null)
 const countContentLines = ref(0)
 
 const updateCountLines = () => {
-  countContentLines.value = Math.round(content.value.clientHeight / 20)
+  if (content.value && content.value.clientHeight) {
+    countContentLines.value = Math.round(content.value.clientHeight / 20)
+  }
 }
 
 onMounted(() => {
@@ -128,9 +130,21 @@ onBeforeUnmount(() => {
         <span v-for="i in countContentLines" :key="i">{{ i }}</span>
       </div>
       <div v-html="openingFile.content" ref="content"></div>
-      <!-- <div class="flex flex-col justify-start items-start text-14 text-[#dddddd] pr-20">
-        <div>TOEIC: 905/990</div>
-      </div> -->
+      <div class="flex flex-col justify-start items-start text-14 text-[#dddddd] pr-20">
+        <div>&lt;?php</div>
+        <br />
+        <div>namespace App\Http\Controllers;</div>
+        <br />
+        <div>use App\Http\Controllers\Controller;</div>
+        <br />
+        <div>class HomeController extends Controller</div>
+        <div>{</div>
+        <div class="ml-20">try {</div>
+        <div class="ml-40">hehe</div>
+        <div class="ml-20">} catch (\Exception $ex) {</div>
+        <div class="ml-20">}</div>
+        <div>}</div>
+      </div>
     </div>
   </div>
 </template>
