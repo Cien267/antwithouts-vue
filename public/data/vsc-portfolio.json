@@ -17,7 +17,7 @@
       "is_directory": false,
       "icon": "<i class=\"fa-regular fa-file-lines text-16\"></i>",
       "parent_id": 1,
-      "content": "<div class=\"flex flex-col justify-start items-start text-14 text-[#dddddd] pr-20\">\n        <div>Hi there!</div>\n        <br />\n        <div>\n          My name is Kiên and I am Vietnamese. The word 'ant', translated From English to\n          Vietnamese, is 'kiến'. However if you don't type 's' on your unicode keyboard, my name\n          comes out. That's this website address. :D\n        </div>\n        <br />\n        <div>\n          As a Web Developer specializing in PHP Laravel and Vue.js, I bring a wealth of experience\n          in developing robust and user-friendly web applications. With a solid foundation in\n          backend development using Laravel and frontend expertise in Vue.js, I am adept at creating\n          seamless and responsive digital experiences. My track record includes designing and\n          implementing scalable solutions, integrating complex features, and ensuring optimal\n          performance across platforms. Passionate about staying updated with the latest\n          technologies and best practices, I thrive in dynamic environments where I can leverage my\n          skills to deliver innovative solutions that meet and exceed client expectations.\n        </div>\n        <br />\n        <div>Below are my contact information. Feel free to reach out!</div>\n        <div class=\"flex w-full\">\n          <div class=\"grow\">- Phone: 0866015505</div>\n          <div class=\"grow\">- Email: kiennguyenduc267@gmail.com</div>\n          <div class=\"grow\">- Address: Ha Noi, Viet Nam</div>\n        </div>\n      </div>"
+      "content": "<div class=\"flex flex-col justify-start items-start text-14 text-[#dddddd] pr-20\">\n        <div>Hi there!</div>\n        <br />\n        <div>\n          My name is Kiên and I am Vietnamese. The word 'ant', translated From English to\n          Vietnamese, is 'kiến'. However if you don't type 's' on your unicode keyboard, my name\n          comes out. That's this website address. :D\n        </div>\n        <br />\n        <div>\n          As a Web Developer specializing in PHP Laravel and Vue.js, I bring a wealth of experience\n          in developing robust and user-friendly web applications. With a solid foundation in\n          backend development using Laravel and frontend expertise in Vue.js, I am adept at creating\n          seamless and responsive digital experiences. My track record includes designing and\n          implementing scalable solutions, integrating complex features, and ensuring optimal\n          performance across platforms. Passionate about staying updated with the latest\n          technologies and best practices, I thrive in dynamic environments where I can leverage my\n          skills to deliver innovative solutions that meet and exceed client expectations.\n        </div>\n        <br />\n        <div>Below are my contact information. Feel free to reach out!</div>\n        <div class=\"flex w-full\">\n          <div class=\"grow\">- Phone: <strong>0866015505</strong></div>\n          <div class=\"grow\">- Email: <strong>kiennguyenduc267@gmail.com</strong></div>\n          <div class=\"grow\">- Address: <strong>Ha Noi, Viet Nam</strong></div>\n        </div>\n      </div>"
     },
     {
       "id": 3,
@@ -26,7 +26,7 @@
       "is_directory": false,
       "icon": "<i class=\"fa-regular fa-file-lines text-16\"></i>",
       "parent_id": 1,
-      "content": ""
+      "content": "<div class=\"flex flex-col justify-start items-start text-14 text-[#dddddd] pr-20\">\n        <div>University:</div>\n        <br />\n        <a href=\"https://portal.ptit.edu.vn/\" target=\"_blank\" class=\"underline\"\n          >Posts and Telecommunications Institute of Technology (PTIT)</a\n        >\n        <div>ENGINEER'S DEGREE IN INFORMATION TECHNOLOGY</div>\n        <div>2018 - 2023</div>\n      </div>"
     },
     {
       "id": 4,
@@ -35,7 +35,7 @@
       "is_directory": false,
       "icon": "<i class=\"fa-regular fa-file-lines text-16\"></i>",
       "parent_id": 1,
-      "content": ""
+      "content": "<div class=\"flex flex-col justify-start items-start text-14 text-[#dddddd] pr-20\">\n        <div>TOEIC: 905/990</div>\n      </div>"
     },
     {
       "id": 5,

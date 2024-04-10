@@ -129,31 +129,7 @@ onBeforeUnmount(() => {
       </div>
       <div v-html="openingFile.content" ref="content"></div>
       <!-- <div class="flex flex-col justify-start items-start text-14 text-[#dddddd] pr-20">
-        <div>Hi there!</div>
-        <br />
-        <div>
-          My name is Kiên and I am Vietnamese. The word 'ant', translated From English to
-          Vietnamese, is 'kiến'. However if you don't type 's' on your unicode keyboard, my name
-          comes out. That's this website address. :D
-        </div>
-        <br />
-        <div>
-          As a Web Developer specializing in PHP Laravel and Vue.js, I bring a wealth of experience
-          in developing robust and user-friendly web applications. With a solid foundation in
-          backend development using Laravel and frontend expertise in Vue.js, I am adept at creating
-          seamless and responsive digital experiences. My track record includes designing and
-          implementing scalable solutions, integrating complex features, and ensuring optimal
-          performance across platforms. Passionate about staying updated with the latest
-          technologies and best practices, I thrive in dynamic environments where I can leverage my
-          skills to deliver innovative solutions that meet and exceed client expectations.
-        </div>
-        <br />
-        <div>Below are my contact information. Feel free to reach out!</div>
-        <div class="flex w-full">
-          <div class="grow">- Phone: 0866015505</div>
-          <div class="grow">- Email: kiennguyenduc267@gmail.com</div>
-          <div class="grow">- Address: Ha Noi, Viet Nam</div>
-        </div>
+        <div>TOEIC: 905/990</div>
       </div> -->
     </div>
   </div>
