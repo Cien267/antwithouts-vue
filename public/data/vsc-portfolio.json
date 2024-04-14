@@ -53,28 +53,19 @@
       "is_directory": false,
       "icon": "<i class=\"fa-brands fa-laravel text-16\" style=\"color:#f72c1f\"></i>",
       "parent_id": 5,
-      "content": ""
+      "content": "<div class=\"flex flex-col justify-start items-start text-14 text-[#dddddd] pr-20\">\n        <div style=\"color: #b1afaf\">// PhpStorm theme</div>\n        <div style=\"color: #fdbe49cb\">&lt;?php</div>\n        <br />\n        <div><span style=\"color: #fdbe49cb\">namespace</span> AppHttpControllers;</div>\n        <br />\n        <div><span style=\"color: #fdbe49cb\">use</span> AppHttpControllersController;</div>\n        <div><span style=\"color: #fdbe49cb\">use</span> AppHttpServicesSkillService;</div>\n        <br />\n        <div>\n          <span style=\"color: #fdbe49cb\">class</span> HomeController\n          <span style=\"color: #fdbe49cb\">extends</span> Controller\n        </div>\n        <div>{</div>\n        <div class=\"ml-20\">\n          <span style=\"color: #fdbe49cb\">private </span>\n          <span style=\"color: #f581f1ab\">$skillService</span>;\n        </div>\n        <br />\n        <div class=\"ml-20\">\n          <span style=\"color: #fdbe49cb\">public function </span>\n          <span style=\"color: #44aaf3dc\">__construct </span>(SkillService\n          <span style=\"color: #f581f1ab\">$skillService</span>)\n        </div>\n        <div class=\"ml-20\">{</div>\n        <div class=\"ml-40\" style=\"color: #f581f1ab\">$this->skillService = $skillService;</div>\n        <div class=\"ml-20\">}</div>\n        <br />\n        <div class=\"ml-20\">\n          <span style=\"color: #fdbe49cb\">public function </span>\n          <span style=\"color: #44aaf3dc\">getSkillsInformation</span>(Request\n          <span style=\"color: #f581f1ab\">$request</span>)\n        </div>\n        <div class=\"ml-20\">{</div>\n        <div class=\"ml-40\"><span style=\"color: #fdbe49cb\">try </span> {</div>\n        <div class=\"ml-60\">\n          <span style=\"color: #f581f1ab\">$dataRequest</span> =\n          <span style=\"color: #f581f1ab\">$request</span>-><span style=\"color: #44aaf3dc\">all</span\n          >();\n        </div>\n        <div class=\"ml-60\">\n          <span style=\"color: #f581f1ab\">$programmingLanguage</span> =\n          <span style=\"color: #f581f1ab\">$dataRequest</span>['<span style=\"color: #69e769cb\"\n            >programming_language</span\n          >'] ?? \"\";\n        </div>\n        <div class=\"ml-60\">\n          <span style=\"color: #f581f1ab\">$skillsList</span> =\n          <span style=\"color: #f581f1ab\">$$this</span>-><span style=\"color: #f581f1ab\"\n            >skillService</span\n          >-><span style=\"color: #44aaf3dc\">getSkillsByProgLang</span>(<span\n            style=\"color: #f581f1ab\"\n            >$programmingLanguage</span\n          >);\n        </div>\n        <div class=\"ml-60\">\n          <span style=\"color: #fdbe49cb\">return </span>\n          <span style=\"color: #44aaf3dc\">response</span>()-><span style=\"color: #44aaf3dc\"\n            >json</span\n          >([\n        </div>\n        <div class=\"ml-80\"><span style=\"color: #69e769cb\">'status'</span> => 200,</div>\n        <div class=\"ml-80\">\n          <span style=\"color: #69e769cb\">'message'</span> => '<span style=\"color: #69e769cb\"\n            >successfully get information</span\n          >',\n        </div>\n        <div class=\"ml-80\">\n          <span style=\"color: #69e769cb\">'skills'</span> =>\n          <span style=\"color: #f581f1ab\">$skillsList</span>\n        </div>\n        <div class=\"ml-60\">], 200);</div>\n        <div class=\"ml-40\">} <span style=\"color: #fdbe49cb\">catch </span> (Exception\n          <span style=\"color: #f581f1ab\">$ex</span>) {\n        </div>\n        <div class=\"ml-60\">\n          <span style=\"color: #f581f1ab\">$message</span> =\n          <span style=\"color: #f581f1ab\">$ex</span>-><span style=\"color: #44aaf3dc\">getMessage</span\n          >() ?? '<span style=\"color: #69e769cb\">Something went wrong</span>';\n        </div>\n        <div class=\"ml-60\">\n          <span style=\"color: #fdbe49cb\">return </span>\n          <span style=\"color: #44aaf3dc\">response</span>()-><span style=\"color: #44aaf3dc\"\n            >json</span\n          >([\n        </div>\n        <div class=\"ml-80\"><span style=\"color: #69e769cb\">'status'</span> => 422,</div>\n        <div class=\"ml-80\">\n          <span style=\"color: #69e769cb\">'message'</span> =>\n          <span style=\"color: #f581f1ab\">$message</span>,\n        </div>\n        <div class=\"ml-80\"><span style=\"color: #69e769cb\">'skills'</span> => []</div>\n        <div class=\"ml-60\">], 422);</div>\n        <div class=\"ml-40\">}</div>\n        <div class=\"ml-20\">}</div>\n        <div>}</div>\n        <div class=\"flex justify-start gap-10 py-40\" style=\"color: #b1afaf\">\n          <div class=\"flex flex-col\">\n            <div>//</div>\n<div>//</div>\n<div>//</div>\n<div>//</div>\n<div>//</div>\n<div>//</div>\n<div>//</div>\n<div>//</div>\n<div>//</div>\n<div>//</div>\n<div>//</div>\n<div>//</div>\n<div>//</div>\n<div>//</div>\n<div>//</div>\n<div>//</div>\n<div>//</div>\n<div>//</div>\n<div>//</div>\n          </div>\n          <div>\n            <div>expected response:</div>\n            <div>{</div>\n            <div class=\"ml-20\">\"status\": 200,</div>\n            <div class=\"ml-20\">\"message\": \"successfully get information\",</div>\n            <div class=\"ml-20\">\"skills\": {</div>\n            <div class=\"ml-40\">\"MVC Architecture\",</div>\n            <div class=\"ml-40\">\"Blade Templating Engine\",</div>\n            <div class=\"ml-40\">\"Eloquent ORM\",</div>\n            <div class=\"ml-40\">\"Query Builder\",</div>\n            <div class=\"ml-40\">\"Routing\",</div>\n            <div class=\"ml-40\">\"Authentication\",</div>\n            <div class=\"ml-40\">\"Middleware\",</div>\n            <div class=\"ml-40\">\"Events and Listeners\",</div>\n            <div class=\"ml-40\">\"Queue\",</div>\n            <div class=\"ml-40\">\"Cache\",</div>\n            <div class=\"ml-40\">\"Service Container\",</div>\n            <div class=\"ml-40\">\"Service Provider\",</div>\n            <div class=\"ml-20\">}</div>\n            <div>}</div>\n          </div>\n        </div>\n      </div>"
     },
     {
       "id": 7,
-      "name": "index.php",
-      "level": 2,
-      "is_directory": false,
-      "icon": "<i class=\"fa-brands fa-php text-16\" style=\"color:#4d588e\"></i>",
-      "parent_id": 5,
-      "content": ""
-    },
-    {
-      "id": 8,
       "name": "index.html",
       "level": 2,
       "is_directory": false,
       "icon": "<i class=\"fa-brands fa-html5 text-16\" style=\"color:#dd4b25\"></i>",
       "parent_id": 5,
-      "content": ""
+      "content": "<div class=\"flex flex-col justify-start items-start text-14 text-[#b1afaf] pr-20\">\n        <div>\n          &lt;!<span style=\"color: #4281d4f1\">doctype</span>\n          <span style=\"color: #88b7f5\"> html</span>>\n        </div>\n        <div>\n          &lt;<span style=\"color: #4281d4f1\">html</span>\n          <span style=\"color: #88b7f5\"> lang</span>=\"<span style=\"color: #ffa600c7\">en</span>\">\n        </div>\n        <div class=\"ml-20\">&lt;<span style=\"color: #4281d4f1\">head</span>></div>\n        <div class=\"ml-40\">\n          &lt;<span style=\"color: #4281d4f1\">meta</span>\n          <span style=\"color: #88b7f5\"> charset</span>=\"<span style=\"color: #ffa600c7\">UTF-8</span\n          >>\n        </div>\n        <div class=\"ml-40\">\n          &lt;<span style=\"color: #4281d4f1\">meta</span>\n          <span style=\"color: #88b7f5\"> name</span>=\"<span style=\"color: #ffa600c7\">viewport</span>\"\n          <span style=\"color: #88b7f5\"> content</span>=\"<span style=\"color: #ffa600c7\"\n            >width=device-width, initial-scale=1.0</span\n          >>\n        </div>\n        <div class=\"ml-40\">\n          &lt;<span style=\"color: #4281d4f1\">meta</span>\n          <span style=\"color: #88b7f5\"> http-equiv</span>=\"<span style=\"color: #ffa600c7\"\n            >X-UA-Compatible</span\n          >\" <span style=\"color: #88b7f5\"> content</span>=\"<span style=\"color: #ffa600c7\"\n            >ie=edge</span\n          >>\n        </div>\n        <div class=\"ml-40\">\n          &lt;<span style=\"color: #4281d4f1\">title</span>>Kien Nguyen&lt;/<span\n            style=\"color: #4281d4f1\"\n            >title</span\n          >>\n        </div>\n        <div class=\"ml-40\">\n          &lt;<span style=\"color: #4281d4f1\">link</span>\n          <span style=\"color: #88b7f5\"> rel</span>=\"<span style=\"color: #ffa600c7\">stylesheet</span\n          >\" <span style=\"color: #88b7f5\"> href</span>=\"<span style=\"color: #ffa600c7\"\n            >./style.css</span\n          >>\n        </div>\n        <div class=\"ml-20\">&lt;/<span style=\"color: #4281d4f1\">head</span>></div>\n        <div class=\"ml-20\">&lt;<span style=\"color: #4281d4f1\">body</span>></div>\n        <div class=\"ml-40\">&lt;<span style=\"color: #4281d4f1\">main</span>></div>\n        <div class=\"ml-60\">&lt;<span style=\"color: #4281d4f1\">ul</span>></div>\n        <div class=\"ml-80\">&lt;<span style=\"color: #4281d4f1\">li</span>></div>\n        <div class=\"ml-100 text-[#dddddd]\">\n          <strong>Definition</strong>: HTML is the standard markup language for creating web pages\n          and web applications. It provides a structure for content on the internet\n        </div>\n        <div class=\"ml-80\">&lt;/<span style=\"color: #4281d4f1\">li</span>></div>\n        <div class=\"ml-80\">&lt;<span style=\"color: #4281d4f1\">li</span>></div>\n        <div class=\"ml-100 text-[#dddddd]\">\n          <strong>Structure</strong>: HTML documents consist of a series of elements, each\n          represented by tags. These tags define the structure and content of the document\n        </div>\n        <div class=\"ml-80\">&lt;/<span style=\"color: #4281d4f1\">li</span>></div>\n        <div class=\"ml-80\">&lt;<span style=\"color: #4281d4f1\">li</span>></div>\n        <div class=\"ml-100 text-[#dddddd]\">\n          <strong>Tags</strong>: HTML tags are enclosed in angle brackets &lt; > and typically come\n          in pairs: opening tags and closing tags. Examples include &lt;html>, &lt;head>,\n          &lt;title>, &lt;body>, &lt;p>, &lt;div>, &lt;span>, etc\n        </div>\n        <div class=\"ml-80\">&lt;/<span style=\"color: #4281d4f1\">li</span>></div>\n        <div class=\"ml-80\">&lt;<span style=\"color: #4281d4f1\">li</span>></div>\n        <div class=\"ml-100 text-[#dddddd]\">\n          <strong>Attributes</strong>: HTML tags can have attributes that provide additional\n          information about an element. Attributes are added to the opening tag and typically\n          consist of a name and a value. For example, href in &lt;a href=\"url\">\n        </div>\n        <div class=\"ml-80\">&lt;/<span style=\"color: #4281d4f1\">li</span>></div>\n        <div class=\"ml-80\">&lt;<span style=\"color: #4281d4f1\">li</span>></div>\n        <div class=\"ml-100 text-[#dddddd]\">\n          <strong>Elements</strong>: HTML elements are the building blocks of HTML pages. They can\n          be classified as block-level elements (e.g., &lt;div>, &lt;p>, &lt;h1> to &lt;h6>) and\n          inline elements (e.g., &lt;span>, &lt;a>, &lt;strong>)\n        </div>\n        <div class=\"ml-80\">&lt;/<span style=\"color: #4281d4f1\">li</span>></div>\n        <div class=\"ml-80\">&lt;<span style=\"color: #4281d4f1\">li</span>></div>\n        <div class=\"ml-100 text-[#dddddd]\">\n          <strong>Document Structure</strong>: HTML documents have a hierarchical structure,\n          typically consisting of an &lt;html> element containing &lt;head> and &lt;body> elements.\n          The &lt;head> section contains meta-information about the document, while the &lt;body>\n          section contains the content visible to users\n        </div>\n        <div class=\"ml-80\">&lt;/<span style=\"color: #4281d4f1\">li</span>></div>\n        <div class=\"ml-80\">&lt;<span style=\"color: #4281d4f1\">li</span>></div>\n        <div class=\"ml-100 text-[#dddddd]\">\n          <strong>Semantic HTML</strong>: Semantic HTML involves using HTML elements according to\n          their intended purpose, which enhances accessibility, SEO, and code readability. Examples\n          include &lt;header>, &lt;nav>, &lt;article>, &lt;section>, &lt;footer>, etc\n        </div>\n        <div class=\"ml-80\">&lt;/<span style=\"color: #4281d4f1\">li</span>></div>\n        <div class=\"ml-80\">&lt;<span style=\"color: #4281d4f1\">li</span>></div>\n        <div class=\"ml-100 text-[#dddddd]\">\n          <strong>Accessibility</strong>: HTML supports accessibility features like semantic markup,\n          ARIA attributes, and providing alternative text for images to ensure web content is\n          accessible to all users, including those with disabilities\n        </div>\n        <div class=\"ml-80\">&lt;/<span style=\"color: #4281d4f1\">li</span>></div>\n        <div class=\"ml-80\">&lt;<span style=\"color: #4281d4f1\">li</span>></div>\n        <div class=\"ml-100 text-[#dddddd]\">\n          <strong>Compatibility</strong>: HTML is supported by all major web browsers and is\n          compatible with various platforms and devices, making it a universal language for web\n          development\n        </div>\n        <div class=\"ml-80\">&lt;/<span style=\"color: #4281d4f1\">li</span>></div>\n        <div class=\"ml-80\">&lt;<span style=\"color: #4281d4f1\">li</span>></div>\n        <div class=\"ml-100 text-[#dddddd]\">\n          <strong>Versioning</strong>: HTML5 is the latest version, introducing new features like\n          native multimedia support, canvas for drawing, and semantic elements\n        </div>\n        <div class=\"ml-80\">&lt;/<span style=\"color: #4281d4f1\">li</span>></div>\n        <div class=\"ml-60\">&lt;/<span style=\"color: #4281d4f1\">ul</span>></div>\n        <div class=\"ml-40\">&lt;/<span style=\"color: #4281d4f1\">main</span>></div>\n        <div class=\"ml-40\">\n          &lt;<span style=\"color: #4281d4f1\">script</span>\n          <span style=\"color: #88b7f5\"> src</span>=\"<span style=\"color: #ffa600c7\">script.js</span\n          >\">&lt;/<span style=\"color: #4281d4f1\">script</span>>\n        </div>\n        <div class=\"ml-20\">&lt;/<span style=\"color: #4281d4f1\">body</span>></div>\n        <div>&lt;/<span style=\"color: #4281d4f1\">html</span>></div>\n      </div>"
     },
     {
-      "id": 9,
+      "id": 8,
       "name": "style.css",
       "level": 2,
       "is_directory": false,
@@ -83,7 +74,7 @@
       "content": ""
     },
     {
-      "id": 10,
+      "id": 9,
       "name": "bootstrap",
       "level": 2,
       "is_directory": false,
@@ -92,7 +83,7 @@
       "content": ""
     },
     {
-      "id": 11,
+      "id": 10,
       "name": "tailwindcss",
       "level": 2,
       "is_directory": false,
@@ -101,7 +92,7 @@
       "content": ""
     },
     {
-      "id": 12,
+      "id": 11,
       "name": "script.js",
       "level": 2,
       "is_directory": false,
@@ -110,7 +101,7 @@
       "content": ""
     },
     {
-      "id": 13,
+      "id": 12,
       "name": "script.ts",
       "level": 2,
       "is_directory": false,
@@ -119,7 +110,7 @@
       "content": ""
     },
     {
-      "id": 14,
+      "id": 13,
       "name": "jquery.js",
       "level": 2,
       "is_directory": false,
@@ -128,7 +119,7 @@
       "content": ""
     },
     {
-      "id": 15,
+      "id": 14,
       "name": "vue2.vue",
       "level": 2,
       "is_directory": false,
@@ -137,7 +128,7 @@
       "content": ""
     },
     {
-      "id": 16,
+      "id": 15,
       "name": "vue3.vue",
       "level": 2,
       "is_directory": false,
@@ -146,7 +137,7 @@
       "content": ""
     },
     {
-      "id": 17,
+      "id": 16,
       "name": "nuxt",
       "level": 2,
       "is_directory": false,
@@ -155,7 +146,7 @@
       "content": ""
     },
     {
-      "id": 18,
+      "id": 17,
       "name": "redis",
       "level": 2,
       "is_directory": false,
@@ -164,7 +155,7 @@
       "content": ""
     },
     {
-      "id": 19,
+      "id": 18,
       "name": "mysql.sql",
       "level": 2,
       "is_directory": false,
@@ -173,7 +164,7 @@
       "content": ""
     },
     {
-      "id": 20,
+      "id": 19,
       "name": "mongoDB",
       "level": 2,
       "is_directory": false,
@@ -182,7 +173,7 @@
       "content": ""
     },
     {
-      "id": 21,
+      "id": 20,
       "name": "linux",
       "level": 2,
       "is_directory": false,
@@ -191,7 +182,7 @@
       "content": ""
     },
     {
-      "id": 22,
+      "id": 21,
       "name": "docker",
       "level": 2,
       "is_directory": false,
@@ -200,7 +191,7 @@
       "content": ""
     },
     {
-      "id": 23,
+      "id": 22,
       "name": "github",
       "level": 2,
       "is_directory": false,
@@ -209,7 +200,7 @@
       "content": ""
     },
     {
-      "id": 24,
+      "id": 23,
       "name": "gitlab",
       "level": 2,
       "is_directory": false,
@@ -218,7 +209,7 @@
       "content": ""
     },
     {
-      "id": 25,
+      "id": 24,
       "name": "unit_test",
       "level": 2,
       "is_directory": false,
@@ -227,7 +218,7 @@
       "content": ""
     },
     {
-      "id": 26,
+      "id": 25,
       "name": "debug",
       "level": 2,
       "is_directory": false,
@@ -236,7 +227,7 @@
       "content": ""
     },
     {
-      "id": 27,
+      "id": 26,
       "name": "scrum",
       "level": 2,
       "is_directory": false,
@@ -245,7 +236,7 @@
       "content": ""
     },
     {
-      "id": 28,
+      "id": 27,
       "name": "experience",
       "level": 1,
       "is_directory": true,
@@ -254,7 +245,7 @@
       "content": ""
     },
     {
-      "id": 29,
+      "id": 28,
       "name": "Kiotviet",
       "level": 2,
       "is_directory": false,
@@ -263,7 +254,7 @@
       "content": ""
     },
     {
-      "id": 30,
+      "id": 29,
       "name": "DEHA Vietnam",
       "level": 2,
       "is_directory": false,
@@ -272,7 +263,7 @@
       "content": ""
     },
     {
-      "id": 31,
+      "id": 30,
       "name": "EUP",
       "level": 2,
       "is_directory": false,

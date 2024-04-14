@@ -1,10 +1,14 @@
 <script setup lang="ts">
 import structureData from '../../../../public/data/vsc-portfolio.json'
 import type { VscThemeDataType } from '@/types/portfolio'
-import { inject, ref, type Ref, onMounted, onUpdated, onBeforeUnmount } from 'vue'
+import { inject, ref, type Ref, onMounted, onUpdated, onBeforeUnmount, computed } from 'vue'
 
 const selectedFiles = ref(inject('selectedFiles') as VscThemeDataType[])
 const openingFile = ref(inject('openingFile') as VscThemeDataType)
+
+const heightOfContent = computed(() => {
+  return window.innerHeight - 100
+})
 
 // ==================== TAB LIST ====================
 const selectFile = (file: VscThemeDataType) => {
@@ -17,7 +21,20 @@ const closeFile = (file: VscThemeDataType) => {
   if (index !== -1) {
     selectedFiles.value.splice(index, 1)
     if (openingFile.value.id === file.id) {
-      openingFile.value = selectedFiles.value[Object.keys(selectedFiles.value).length - 1]
+      if (selectedFiles.value.length > 0) {
+        openingFile.value = selectedFiles.value[Object.keys(selectedFiles.value).length - 1]
+      } else {
+        openingFile.value = {
+          id: 0,
+          name: '',
+          level: 0,
+          is_directory: false,
+          icon: '',
+          parent_id: 0,
+          content: ''
+        }
+        countContentLines.value = 0
+      }
     }
   }
 }
@@ -125,26 +142,14 @@ onBeforeUnmount(() => {
       <div class="w-full border-b border-solid border-[#3d3b3b]"></div>
     </div>
     <div class="text-[#bab9b9] px-16 py-4 text-14">{{ getFileAddress() }}</div>
-    <div class="flex justify-start items-start">
+    <div
+      class="flex justify-start items-start overflow-auto"
+      :style="`max-height: ${heightOfContent}px`"
+    >
       <div class="flex flex-col justify-start items-center text-[#8e8c8c] text-14 px-20">
         <span v-for="i in countContentLines" :key="i">{{ i }}</span>
       </div>
       <div v-html="openingFile.content" ref="content"></div>
-      <div class="flex flex-col justify-start items-start text-14 text-[#dddddd] pr-20">
-        <div>&lt;?php</div>
-        <br />
-        <div>namespace App\Http\Controllers;</div>
-        <br />
-        <div>use App\Http\Controllers\Controller;</div>
-        <br />
-        <div>class HomeController extends Controller</div>
-        <div>{</div>
-        <div class="ml-20">try {</div>
-        <div class="ml-40">hehe</div>
-        <div class="ml-20">} catch (\Exception $ex) {</div>
-        <div class="ml-20">}</div>
-        <div>}</div>
-      </div>
     </div>
   </div>
 </template>
