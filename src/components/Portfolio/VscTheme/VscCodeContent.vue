@@ -16,7 +16,6 @@ const selectFile = (file: VscThemeDataType) => {
 }
 
 const closeFile = (file: VscThemeDataType) => {
-  console.log(file)
   const index = selectedFiles.value.findIndex((item: VscThemeDataType) => item.id === file.id)
   if (index !== -1) {
     selectedFiles.value.splice(index, 1)
@@ -150,6 +149,7 @@ onBeforeUnmount(() => {
         <span v-for="i in countContentLines" :key="i">{{ i }}</span>
       </div>
       <div v-html="openingFile.content" ref="content"></div>
+      <!-- <div style="color: #dddddd"></div> -->
     </div>
   </div>
 </template>
@@ -157,5 +157,20 @@ onBeforeUnmount(() => {
 ::-webkit-scrollbar {
   background: none;
   display: none;
+}
+.ml-20 {
+  margin-left: 20px;
+}
+.ml-40 {
+  margin-left: 40px;
+}
+.ml-60 {
+  margin-left: 60px;
+}
+.ml-80 {
+  margin-left: 80px;
+}
+.ml-100 {
+  margin-left: 100px;
 }
 </style>
